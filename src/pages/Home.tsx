@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import openingBg from '../../Opening BG.webp'
 import { ManaMotes } from '../components/ManaMotes'
 
-const flowersBg = '/Flowers%20BG.webp'
+const flowersBg = '/flowers_bg.webp'
 const lettersBg = '/ghibli_library_bg.webp'
-const myWhysBg = '/My%20Whys%20BG.webp'
-const ourPicturesBg = '/Our%20Pictures%20BG.webp'
-const yourPicturesBg = '/Your%20Pictures%20BG.webp'
+const myWhysBg = '/my_whys_bg.webp'
+const ourPicturesBg = '/our_pictures_bg.webp'
+const yourPicturesBg = '/your_pictures_bg.webp'
 
 type HomeTileProps = {
   label: string

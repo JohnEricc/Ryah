@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react'
-import { ArrowLeft } from 'lucide-react'
+import { useEffect, useMemo, useState } from 'react'
+import { ArrowLeft, X } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 import { ManaMotes } from '../components/ManaMotes'
@@ -121,12 +121,39 @@ function LetterReader({
   letter: LetterItem
   onClose: () => void
 }) {
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        onClose()
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [onClose])
+
   return (
     <div
       aria-label="Letter reader"
+      role="dialog"
+      aria-modal="true"
+      onClick={(event) => {
+        if (event.target === event.currentTarget) {
+          onClose()
+        }
+      }}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-3 sm:bg-black/85 sm:backdrop-blur-md sm:p-6"
     >
       <div className="relative max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-3xl border border-stone-300 bg-[#f7f2e7] p-6 text-stone-900 shadow-2xl sm:p-10">
+        {/* Sticky top-right close button */}
+        <button
+          type="button"
+          aria-label="Close letter"
+          onClick={onClose}
+          className="sticky top-4 right-4 ml-auto z-20 flex h-9 w-9 items-center justify-center rounded-full bg-stone-200/80 text-stone-700 shadow-sm transition hover:bg-stone-300 touch-manipulation"
+        >
+          <X className="h-4 w-4" />
+        </button>
+
         {/* Wax Seal Header Accent */}
         <div className="-mt-2 mb-4 flex justify-center">
           <img
@@ -161,7 +188,18 @@ function LetterReader({
           </p>
         ) : null}
 
-        <div className="mt-8 flex items-center justify-between border-t border-stone-300/80 pt-4">
+        {/* Centered return-to-bookshelf call-to-action */}
+        <div className="mt-8 mb-4 flex justify-center">
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-full border border-[#3d261d]/20 bg-[#3d261d]/10 px-6 py-2.5 font-serif text-sm tracking-wide text-[#3d261d] transition hover:bg-[#3d261d]/20 touch-manipulation"
+          >
+            ← Return to Bookshelf
+          </button>
+        </div>
+
+        <div className="flex items-center justify-between border-t border-stone-300/80 pt-4">
           <span className="font-serif text-sm italic text-stone-600">Forever yours, John</span>
           <button
             type="button"
