@@ -143,11 +143,11 @@ export default function InfiniteCarousel({
           className="absolute inset-0 flex h-full w-full"
           style={{
             width: `${displayPhotos.length * 100}%`,
-            transform: `translateX(calc(${-100 * (offset / displayPhotos.length)}% + ${(dragX * 100) / (stageWidthRef.current || 1)}%))`,
+            transform: `translateX(calc(${-100 * (offset / displayPhotos.length)}% + ${dragX}px))`,
             transition:
               skipTransition || isDragging
                 ? 'none'
-                : 'transform 1150ms cubic-bezier(0.16, 1, 0.3, 1)',
+                : 'transform 550ms cubic-bezier(0.25, 1, 0.5, 1)',
           }}
         >
           {displayPhotos.map((p, i) => {
