@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Caveat:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    font-family: 'Source Serif 4', Georgia, serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    background:
+      radial-gradient(circle at top, rgba(245, 209, 196, 0.12), transparent 24%),
+      linear-gradient(180deg, #120914 0%, #1a0d1f 55%, #140810 100%);
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: transparent;
+    color: #f8f1ec;
+  }
+
+  body::before {
+    content: '';
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    opacity: 0.16;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E");
+    mix-blend-mode: soft-light;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  *::selection {
+    background: rgba(247, 191, 191, 0.35);
+    color: #fff6f0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font: inherit;
+  }
+
+  #root {
+    isolation: isolate;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Bodoni Moda', 'Times New Roman', serif;
+    letter-spacing: -0.04em;
+  }
+
+  .font-hand {
+    font-family: 'Caveat', 'Comic Sans MS', cursive;
+    letter-spacing: 0.01em;
+  }
+
+  .romantic-panel {
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
+      rgba(18, 9, 20, 0.62);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 30px 80px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(24px);
+  }
+
+  .timeline-card {
+    animation: rise-in 0.8s ease both;
+  }
+}
+
+@layer utilities {
+  @media (prefers-reduced-motion: no-preference) {
+    .romantic-panel,
+    .group img,
+    .timeline-card {
+      will-change: transform, opacity;
+    }
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gentle drifting petals across the Flowers selection grid */
+@keyframes petal-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--sway, 8vw), 110vh, 0) rotate(var(--spin, 360deg));
+    opacity: 0;
+  }
+}
+
+.petal {
+  animation: petal-fall linear infinite;
+  transform: translate3d(0, -10vh, 0) rotate(0deg);
+  will-change: transform, opacity;
+}
+
+/* Soft pulsing breathing for the Enter call-to-action */
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(255, 190, 130, 0.35);
+  }
+  50% {
+    transform: scale(1.045);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35),
+      0 0 0 12px rgba(255, 190, 130, 0);
+  }
+}
+
+.animate-breathe {
+  animation: breathe 3.2s ease-in-out infinite;
+}
+
+/* Weightless mana motes floating upward from the flower field into the twilight sky */
+@keyframes mote-float {
+  0% {
+    transform: translate3d(0, 15vh, 0) scale(0.95);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(calc(var(--sway) * 0.5), -40vh, 0) scale(1.05);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--sway), -115vh, 0) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.mote {
+  animation: mote-float linear infinite;
+  will-change: transform, opacity;
+  transform-origin: center;
+}
+
+/* Soft white dandelion fluff drifting diagonally upward (bottom-left to top-right) */
+@keyframes fluff-float {
+  0% {
+    transform: translate3d(-4vw, 108vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(calc(var(--fluff-sway, 2vw) * 0.6), 52vh, 0)
+      rotate(var(--fluff-spin, 120deg));
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--fluff-sway, 4vw), -12vh, 0)
+      rotate(var(--fluff-spin, 180deg));
+    opacity: 0;
+  }
+}
+
+.fluff {
+  position: absolute;
+  left: 0;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.25) 60%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  animation: fluff-float linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Hide scrollbars on horizontal filter bars while keeping them scrollable */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive entrance background — cover on mobile, contain on tablet/desktop,
+   anchored to the bottom so the girl + flower field are always fully visible. */
+.splash-bg {
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 640px) {
+  .splash-bg {
+    background-size: contain;
+    background-position: center bottom;
+  }
+}
+
+/* Gentle vertical float for the My Whys parchment scroll (GPU-only) */
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
