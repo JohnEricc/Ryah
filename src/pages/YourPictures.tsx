@@ -30,6 +30,14 @@ const yourPictures: CarouselPhoto[] = [
   { id: 'your-4', src: '/images/Your%20Pictures/att.LHI4UTmVcUCtOfdMJ4frxR6CxLm_H_rq1uE8Giw4VhQ.webp', alt: 'You — Look 22' },
   { id: 'your-5', src: '/images/Your%20Pictures/att.bYFaANAs81m7UrwVH-Z2WLFNm-BN8kDUuDum8C0U0Hw.webp', alt: 'You — Look 23' },
   { id: 'your-6', src: '/images/Your%20Pictures/c7714bc6-9462-4177-92e7-06b0c442bb92.webp', alt: 'You — Look 24' },
+  { id: 'your-7', src: '/images/Your%20Pictures/att.8w2rJPbztAB1QuFr0JZdSpMlNOvwMhg8MiwxG1h63s4.webp', alt: 'You — Look 25' },
+  { id: 'your-8', src: '/images/Your%20Pictures/att.j5Ds0lxTEYkVzrfmkBFRySVPI42rs-S3pMmZddcndgE.webp', alt: 'You — Look 26' },
+  { id: 'your-9', src: '/images/Your%20Pictures/att.kNIQZk-bTuJyjKE_ELQiUAobvflOdH2O6W25co0LZQM.webp', alt: 'You — Look 27' },
+  { id: 'your-10', src: '/images/Your%20Pictures/att.ktlNfziywUpU8kAysQhiXhjwFI0tQznkiLBu0aK6Fpo.webp', alt: 'You — Look 28' },
+  { id: 'your-11', src: '/images/Your%20Pictures/att.PFscManq0GzMNEyp6U8y2UsOMatzH8OCiohQenWlUmU.webp', alt: 'You — Look 29' },
+  { id: 'your-12', src: '/images/Your%20Pictures/att.SVWkCiCiGmYX3hQnYZF_0v6F_MDZrv8YoHKqYb9SkfY.webp', alt: 'You — Look 30' },
+  { id: 'your-13', src: '/images/Your%20Pictures/att.w2aXnwNAM_wY8XKBXnlY2g-uk-jnB32jKmHeeJqBJc0.webp', alt: 'You — Look 31' },
+  { id: 'your-14', src: '/images/Your%20Pictures/att.WJFOrt2C9AAndiBH6xCkhWk7S3GA2sbGir52dJLsNRw.webp', alt: 'You — Look 32' },
 ]
 
 type LightboxState =

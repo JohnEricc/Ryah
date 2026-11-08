@@ -232,6 +232,7 @@ export default function Letters() {
       Playful: baseCounts.Playful ?? 0,
       Serious: baseCounts.Serious ?? 0,
       Milestone: baseCounts.Milestone ?? 0,
+      Healing: baseCounts.Healing ?? 0,
     } as Record<LetterTone, number>
   }, [])
 

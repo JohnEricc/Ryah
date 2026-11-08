@@ -19,10 +19,10 @@ describe('Letters', () => {
     useEntryFlowStore.getState().reset()
   })
 
-  it('shows 7 monthsary letters and renders the November letter with centered title/footer and justified body', () => {
+  it('shows 8 monthsary letters and renders the November letter with centered title/footer and justified body', () => {
     renderLetters()
 
-    expect(screen.getAllByRole('article').length).toBe(7)
+    expect(screen.getAllByRole('article').length).toBe(8)
     expect(screen.getByText(/november 9, 2025/i)).toBeInTheDocument()
     expect(screen.getByText(/august 9, 2026/i)).toBeInTheDocument()
 
@@ -54,7 +54,7 @@ describe('Letters', () => {
     ).toBeInTheDocument()
   })
 
-  it('filters letters by tone and returns 7 when switching back to All', () => {
+  it('filters letters by tone and returns 8 when switching back to All', () => {
     renderLetters()
 
     fireEvent.click(screen.getByRole('tab', { name: /soft/i }))
@@ -66,7 +66,7 @@ describe('Letters', () => {
     expect(softTitles).not.toContain('July 9, 2026')
 
     fireEvent.click(screen.getByRole('tab', { name: /all/i }))
-    expect(screen.getAllByRole('article').length).toBe(7)
+    expect(screen.getAllByRole('article').length).toBe(8)
   })
 
   it('opens the July letter and keeps the happy monthsary footer centered/underlined', () => {

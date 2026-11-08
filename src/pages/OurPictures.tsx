@@ -20,6 +20,8 @@ const ourPictures: CarouselPhoto[] = [
   { id: 'our-4', src: '/images/Our%20Pictures/att.Ot4m8bh8Xmc_Pl1docjIwXpiQdur0Xp1mKxUbyfjvbM.webp', alt: 'Our Memory 12' },
   { id: 'our-5', src: '/images/Our%20Pictures/att.Sfb6DmpVRQvup_cmky3tkuj6D1G1pPHiwIW2P9f5ULQ.webp', alt: 'Our Memory 13' },
   { id: 'our-6', src: '/images/Our%20Pictures/att.wHXICUZA18hHEw28WWa9DvX0iIotankj4jDk3IEZ5l0.webp', alt: 'Our Memory 14' },
+  { id: 'our-7', src: '/images/Our%20Pictures/att.BNL46lblSRrORbqlDeyjlkYxtatOstf-0nlBWWqhGS0.webp', alt: 'Our Memory 15' },
+  { id: 'our-8', src: '/images/Our%20Pictures/att.c8pzHvS_2kjCkc7gU-GR8ufe_B7H0R-4DUulA--4l7c.webp', alt: 'Our Memory 16' },
 ]
 
 type LightboxState =

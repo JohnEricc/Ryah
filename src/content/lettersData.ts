@@ -1,4 +1,10 @@
-export type LetterMood = 'Soft' | 'Grateful' | 'Playful' | 'Serious' | 'Milestone'
+export type LetterMood =
+  | 'Soft'
+  | 'Grateful'
+  | 'Playful'
+  | 'Serious'
+  | 'Milestone'
+  | 'Healing'
 
 export type LetterTone = 'All' | LetterMood
 
@@ -24,6 +30,7 @@ export const LETTER_TONES: LetterTone[] = [
   'Playful',
   'Serious',
   'Milestone',
+  'Healing',
 ]
 
 export const letters: LetterItem[] = [
@@ -175,6 +182,23 @@ export const letters: LetterItem[] = [
       'I love her. God, I am so endlessly grateful that I get to love her. She lives in every quiet beat of my chest.',
       '“Before you, I had never known anyone who truly looked at me and believed I was enough,” I murmur, speaking as if the air itself could carry the words to her ears. “Until you came along and gently taught me how to believe it, too. Out of all the billions of souls walking this earth, through all the roads I could have taken and all the alternate lives I could have lived, some impossible, beautiful miracle of timing allowed my story to collide with yours. And if I spend the rest of my days searching for a word deeper, grander, and more sacred than lucky, it still wouldn’t come close to explaining what you are to me.”',
     ],
+    footer: 'Happy Monthsary my love and I love you so much!',
+  },
+  {
+    id: 'november-09-2026',
+    title: 'November 9, 2026',
+    subtitle: 'Letter 08',
+    dateLabel: 'Monthsary 08',
+    tone: 'Healing',
+    teaser: 'This past month has quietly changed so much between us.',
+    pov: 'JOHN',
+    paragraphs: [
+      'This past month has quietly changed so much between us. We uncovered new, fragile truths about one another diving deep beneath the surface into the shadowed corners of our pasts, facing the flaws we once kept guarded, and learning how to hold each other’s history without flinching. It feels as though we are relearning the sacred rhythm of each other’s hearts and redrawing the map of our lives together. Retracing our steps toward a gentler, more forgiving path, we are doing the quiet work of healing side by side, discovering how to love each other with greater depth and taking slow, deliberate steps every day to become the people we were always meant to be.',
+      'We carry the humbling knowledge that neither of us is perfect. There are chapters in our pasts we aren’t proud of, choices that left their marks yet, in spite of it all, we still look at each other and choose to stay. Loving her, wrapping my arms around her and feeling the soft exhale that tells me she finally feels safe in my embrace—that is what makes me the happiest man alive. Watching her smile bloom, an unbidden prayer rises in my chest: Thank You, God, for letting me experience a love this genuine and pure. Thank You for bringing her into my life, and for giving me the privilege not only to love the extraordinary woman standing before me today, but also the tender soul I have cherished for nearly a decade.',
+      'She is, without question, the greatest gift that has ever crossed my path, and it aches to watch her be so relentless and unforgiving with herself. If I could give her my eyes, even if just for a single afternoon, I would do it without a second thought. If she could see herself the way I see her, she would never again believe the cruel lie that she drags people down or that she is a bad influence in someone’s life. Through my eyes, she would see the undeniable truth: she is simply someone who yearns to be loved, protected, and cherished in the exact ways she has prayed for since childhood. A little girl who only ever wanted to feel loved and safe, and who never deserved a single ounce of the cruelty life threw her way.',
+      'The world has not been kind to her. It carved a bitter instinct into her bones that she must face every trial and bear every sorrow entirely on her own and seeing that heaviness in her eyes is what hurts me the most. But for as long as there is breath in my lungs, I will spend my life giving her reasons to lay that armor down. I want to build a sanctuary around her, day by day, until the exhausting need to exist in survival mode completely fades away. I want to guard that radiant smile so it never has to dim again, loving her relentlessly with every piece of who I am.',
+    ],
+    signature: 'Forever yours, John',
     footer: 'Happy Monthsary my love and I love you so much!',
   },
 ]
